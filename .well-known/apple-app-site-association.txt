@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+        {
+          "appID": "CS4XN8JP39.tw.capital.iHappyTrade",
+          "paths": ["*"]
+        }
+      ]
+  }
+}
