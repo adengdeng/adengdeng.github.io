@@ -8,7 +8,10 @@
           "/stock_no/*",
           "/price/*",
           "/qty/*",
-          "/link*"
+          "/buy_sell/*",
+          "/market_type/*",
+          "/order_type/*",
+          "/app_link*"
         ]
       }
     ]
