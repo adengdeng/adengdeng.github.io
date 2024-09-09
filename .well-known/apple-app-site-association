@@ -5,13 +5,10 @@
       {
         "appID": "CS4XN8JP39.tw.capital.iHappyTrade",
         "paths": [
-          "/stock_no/*",
-          "/price/*",
-          "/qty/*",
-          "/buy_sell/*",
-          "/market_type/*",
-          "/order_type/*",
-          "/app_link*"
+          "/app_link/order*",
+          "/app_link/report*",
+          "/app_link/inventory*",
+          "/app_link/*"
         ]
       }
     ]
