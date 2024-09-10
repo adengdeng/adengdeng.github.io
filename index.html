@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dynamic Links</title>
-
     <script type="text/javascript">
-        // 當頁面加載時，立即跳轉到 App Store
-        window.location.href = "https://apps.apple.com/tw/app/%E7%BE%A4%E7%9B%8A%E8%A1%8C%E5%8B%95%E8%B4%8F%E5%AE%B6/id1469014227";
+        // 嘗試打開 app 的函數
+        function tryOpenApp() {
+            // 獲取當前頁面的 URL
+            var currentUrl = window.location.href;
+            
+            // 將當前 URL 轉換為你的 app scheme URL
+            // 這裡假設你的 app scheme 是 "ihappytrade://"
+            var appUrl = currentUrl.replace("https://", "ihappytrade://");
+            
+            // 記錄當前時間
+            var start = new Date().getTime();
+            
+            // 嘗試打開 app
+            window.location.href = appUrl;
+            
+            // 設置一個計時器，如果在 2 秒內沒有打開 app，就跳轉到 App Store
+            setTimeout(function() {
+                if (new Date().getTime() - start < 2000) {
+                    window.location.href = "https://apps.apple.com/tw/app/%E7%BE%A4%E7%9B%8A%E8%A1%8C%E5%8B%95%E8%B4%8F%E5%AE%B6/id1469014227";
+                }
+            }, 1500);
+        }
+
+        // 當頁面加載完成後執行
+        window.onload = tryOpenApp;
     </script>
-  </head>
-  <body>
-    <h1> homePage</h1>
-  </body>
+</head>
+<body>
+    <h1>正在嘗試打開 app...</h1>
+    <p>如果您沒有安裝 app，將會自動跳轉到 App Store。</p>
+</body>
 </html>
