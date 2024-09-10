@@ -21,12 +21,22 @@
             // 嘗試打開 app
             window.location.href = appUrl;
             
-            // 設置一個計時器，如果在 2 秒內沒有打開 app，就跳轉到 App Store
+            // 設置一個計時器，如果在 2 秒內沒有打開 app，就顯示確認對話框
             setTimeout(function() {
                 if (new Date().getTime() - start < 2000) {
-                    window.location.href = "https://apps.apple.com/tw/app/%E7%BE%A4%E7%9B%8A%E8%A1%8C%E5%8B%95%E8%B4%8F%E5%AE%B6/id1469014227";
+                    showConfirmDialog();
                 }
             }, 1500);
+        }
+
+        // 顯示確認對話框
+        function showConfirmDialog() {
+            if (confirm("是否跳轉到App Store下載應用程序？")) {
+                window.location.href = "https://apps.apple.com/tw/app/%E7%BE%A4%E7%9B%8A%E8%A1%8C%E5%8B%95%E8%B4%8F%E5%AE%B6/id1469014227";
+            } else {
+                document.getElementById("content").style.display = "block";
+                document.getElementById("loading").style.display = "none";
+            }
         }
 
         // 當頁面加載完成後執行
@@ -34,7 +44,14 @@
     </script>
 </head>
 <body>
-    <h1>正在嘗試打開 app...</h1>
-    <p>如果您沒有安裝 app，將會自動跳轉到 App Store。</p>
+    <div id="loading">
+        <h1>正在嘗試打開 app...</h1>
+        <p>如果您沒有安裝 app，將會詢問您是否跳轉到 App Store。</p>
+    </div>
+    <div id="content" style="display: none;">
+        <h1>歡迎來到我們的網站</h1>
+        <p>這是網站的主要內容。如果您想下載我們的 app，請點擊下面的按鈕：</p>
+        <button onclick="showConfirmDialog()">下載 App</button>
+    </div>
 </body>
 </html>
