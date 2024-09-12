@@ -5,10 +5,39 @@
       {
         "appID": "CS4XN8JP39.tw.capital.iHappyTrade",
         "paths": [
-          "/app_link/order*",
-          "/app_link/report*",
-          "/app_link/inventory*",
-          "/app_link/*"
+          "/order*",
+          "/report*",
+          "/inventory*"
+        ]
+      },
+      {
+        "appID": "CS4XN8JP39.tw.capital.goodi",
+        "paths": [
+          "/subscription*"
+        ]
+      },
+      {
+        "appID": "CS4XN8JP39.tw.capital.icbas",
+        "paths": [
+          "/cbas*"
+        ]
+      },
+      {
+        "appID": "CS4XN8JP39.com.capital.iMobileWizard",
+        "paths": [
+          "/subscription*"
+        ]
+      },
+      {
+        "appID": "CS4XN8JP39.tw.capital.ipaec",
+        "paths": [
+          "/account*"
+        ]
+      },
+      {
+        "appID": "CS4XN8JP39.tw.com.capital.iALLInOne",
+        "paths": [
+          "/open*"
         ]
       }
     ]
